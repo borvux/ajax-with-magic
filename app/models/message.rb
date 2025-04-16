@@ -21,4 +21,10 @@ class Message < ApplicationRecord
   belongs_to :chat
 
   validates :content, presence: true
+
+  after_create_commit :broadcast_to_chat
+
+  def broadcast_to_chat
+    broadcast_refresh_to "message"
+  end
 end
