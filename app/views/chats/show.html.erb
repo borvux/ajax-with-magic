@@ -1,6 +1,6 @@
 <% content_for :title, @chat.subject %>
 
-<% turbo_stream_from "message" %>
+<%= turbo_stream_from @chat %>
 
 <div id="<%= dom_id(@chat) %>">
   <div class="card">

@@ -25,6 +25,6 @@ class Message < ApplicationRecord
   after_create_commit :broadcast_to_chat
 
   def broadcast_to_chat
-    broadcast_refresh_to "message"
+    broadcast_refresh_to chat
   end
 end
